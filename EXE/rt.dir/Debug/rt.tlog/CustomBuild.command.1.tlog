@@ -1,0 +1,10 @@
+^E:\REALTIMERAYTRACING\CMAKELISTS.TXT
+setlocal
+E:\CMake\bin\cmake.exe -SE:/RealTimeRayTracing -BE:/RealTimeRayTracing/EXE --check-stamp-file E:/RealTimeRayTracing/EXE/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
